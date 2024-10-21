@@ -1,0 +1,37 @@
+server:
+  port: 8080
+  host:
+    url: http://localhost:8080
+
+spring:
+  application:
+    name: chemical-handbook
+  datasource:
+    url: jdbc:postgresql://localhost:5432/chemical-handbook
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+springdoc:
+  writer-with-default-pretty-printer: true
+  show-login-endpoint: true
+  pre-loading-enabled: true
+  api-docs:
+    enabled: true
+  swagger-ui:
+    path: /swagger-ui.html
+    display-operation-id: true
+    doc-expansion: list
+    operations-sorter: method
+    syntax-highlight:
+      activated: true
+      theme: obsidian
+    groups-order: asc
+  host:
+    url: http://localhost:8080
+image-service:
+  url: http://10.138.134.126:8000/extract-text/

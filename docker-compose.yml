@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    ports:
+      - "5432:5432"  # Map container port to host port
+    environment:
+      POSTGRES_DB: chemical-handbook
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+    volumes:
+      - "postgres_data:/var/lib/postgresql/data"
+
+volumes:
+  postgres_data:

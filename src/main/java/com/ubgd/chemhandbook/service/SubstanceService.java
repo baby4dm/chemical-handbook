@@ -4,6 +4,8 @@ import com.ubgd.chemhandbook.model.Substance;
 import com.ubgd.chemhandbook.model.SubstanceDTO;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 public interface SubstanceService {
     SubstanceDTO findByName(String name);
     SubstanceDTO findById(Integer id);
@@ -15,4 +17,6 @@ public interface SubstanceService {
     SubstanceDTO findByImdgCode(String imdgCode);
 
     SubstanceDTO findByFormula(String formula);
+
+    List<Integer> getAllSubstancesId();
 }

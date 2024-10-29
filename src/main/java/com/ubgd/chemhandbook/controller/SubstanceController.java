@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/substances")
 @RequiredArgsConstructor
@@ -52,5 +54,11 @@ public class SubstanceController {
     public ResponseEntity<SubstanceDTO> getByImage(@RequestParam("file") MultipartFile file) {
         SubstanceDTO substance = substanceService.findByImage(file);
         return ResponseEntity.ok(substance);
+    }
+
+    @GetMapping("/ids")
+    public ResponseEntity<List<Integer>> getAllIds(){
+        List<Integer> ids = substanceService.getAllSubstancesId();
+        return ResponseEntity.ok(ids);
     }
 }

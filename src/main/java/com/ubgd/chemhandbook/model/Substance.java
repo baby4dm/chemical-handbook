@@ -1,9 +1,11 @@
 package com.ubgd.chemhandbook.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.UniqueConstraint;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -24,7 +26,9 @@ public class Substance {
     @Id
     private int oonNumber;
     private int dangerousNumber;
+    @Column(unique = true)
     private String formula;
+    @Column(unique = true)
     private String name;
     private String description;
     @OneToOne
@@ -33,9 +37,12 @@ public class Substance {
     @OneToOne
     @JoinColumn(name = "danger_square_id")
     private DangerSquare dangerSquare;
+    @Column(unique = true)
     private String imdg;
     private String haz;
     private Integer lethal;
+    private Double limitConcentration;
+    private String container;
 
 
     @Override

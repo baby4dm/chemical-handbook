@@ -27,4 +27,6 @@ public class SubstanceDTO {
     private String haz;
     private String imdg;
     private Integer lethal;
+    private Double limitConcentration;
+    private String container;
 }

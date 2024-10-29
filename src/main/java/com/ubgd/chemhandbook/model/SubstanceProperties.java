@@ -20,6 +20,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.util.Objects;
+import java.util.Optional;
 
 @Entity
 @Getter
@@ -45,6 +46,39 @@ public class SubstanceProperties {
     private WaterDanger waterDanger;
     @Enumerated(EnumType.STRING)
     private HealthDanger healthDanger;
+
+    public Optional<Long> getId() {
+        return Optional.ofNullable(id);
+    }
+
+    public Optional<AggregationState> getAggregationState() {
+        return Optional.ofNullable(aggregationState);
+    }
+
+    public Optional<DensityAir> getDensityAir() {
+        return Optional.ofNullable(densityAir);
+    }
+
+    public Optional<DensityWater> getDensityWater() {
+        return Optional.ofNullable(densityWater);
+    }
+
+    public Optional<Solubility> getSolubility() {
+        return Optional.ofNullable(solubility);
+    }
+
+    public Optional<GeneralDanger> getGeneralDanger() {
+        return Optional.ofNullable(generalDanger);
+    }
+
+    public Optional<WaterDanger> getWaterDanger() {
+        return Optional.ofNullable(waterDanger);
+    }
+
+    public Optional<HealthDanger> getHealthDanger() {
+        return Optional.ofNullable(healthDanger);
+    }
+
 
     @Override
     public boolean equals(Object o) {

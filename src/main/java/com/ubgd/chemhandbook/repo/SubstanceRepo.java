@@ -19,4 +19,6 @@ public interface SubstanceRepo extends JpaRepository<Substance, Integer> {
     Optional<Substance> findByFormula(@Param("formula") String formula);
     @Query("SELECT s FROM Substance s WHERE trim(s.imdg) = trim(:imdg)")
     Optional<Substance> findByImdg(@Param("imdg") String imdgCode);
+    @Query("SELECT s.oonNumber FROM Substance s")
+    List<Integer> getAllIds();
 }

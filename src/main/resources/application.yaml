@@ -34,4 +34,4 @@ springdoc:
   host:
     url: http://localhost:8080
 image-service:
-  url: http://10.138.134.126:8000/extract-text/
+  url: http://10.138.134.81:8000/extract-text/

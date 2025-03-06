@@ -23,10 +23,15 @@ public class SubstanceDTO {
     private String generalDanger;
     private String waterDanger;
     private String healthDanger;
+    private Double molecularWeight;
+    private String flammabilityClass;
+    private TemperatureProperties temperatureProperties;
     private DangerSquare dangerSquare;
     private String haz;
     private String imdg;
-    private Integer lethal;
-    private Double limitConcentration;
     private String container;
+    private String respirationRecommendation;
+    private String skinDefenseRecommendation;
+    private HealthInvolve healthInvolve;
+    private FirstAid firstAid;
 }
